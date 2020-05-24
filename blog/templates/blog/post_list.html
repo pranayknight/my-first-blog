@@ -6,17 +6,12 @@
         <div>
             <h1><a href="/">Pranay's Blog</a></h1>
         </div>
-
+        {% for post in posts %}
         <div>
-            <p>published: 2020-05-17, 23:29:42</p>
-            <h2><a href="">Creating first Blog Site</a></h2>
-            <p>Completed the first milestone to create a new app blog in Django.</p>
+            <p>Published: {{ post.published_date }}</p>
+            <p><a href="">{{ post.title }}</a></p>
+            <p>{{ post.text|linebreaksbr }}</p>
         </div>
-
-        <div>
-            <p>published: 2020-05-17, 23:31:28</p>
-            <h2><a href="">Brain Eating</a></h2>
-            <p>I am an insect that is very good at brain eating and love to eat the brains of all the animals and humans.</p>
-        </div>
+        {% endfor %}
     </body>
 </html>
